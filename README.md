@@ -17,7 +17,7 @@ This is what I've done so far.
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
  ```
 - There's some good tutorials out there about how to install it.
-    - [ThePrimeGem](https://github.com/wbthomason/packer.nvim) video tutorial for Unix
+    - [ThePrimeagen](https://github.com/wbthomason/packer.nvim) video tutorial for Unix
     - For Windows you can use [this one](https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391)
 
 The main difference is where you'll place the config files.
