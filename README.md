@@ -19,7 +19,9 @@ This is what I've done so far.
 - There's some good tutorials out there about how to install it.
     - [ThePrimeGem](https://github.com/wbthomason/packer.nvim) video tutorial for Unix
     - For Windows you can use [this one](https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391)
-The main difference is where you'll place the config files
+
+The main difference is where you'll place the config files.
+
 MacOs:
  ```shell
  $ ~/.config/nvim/config_files_here
