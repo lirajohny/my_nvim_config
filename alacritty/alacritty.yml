@@ -54,8 +54,8 @@ window:
   startup_mode: Windowed
 
   # Background opacity
-  opacity: 0.95
-
+  opacity: 0.70
+  rounded_corners: false
 
 # Font configuration (changes require restart)
 font:
@@ -127,7 +127,8 @@ custom_cursor_colors: true
 colors:
   # # Default colors
   primary:
-     background: '0x16252F'
+    #background: '0x16252F'
+     background: '0x000000'
      foreground: '0xc5c8c6'
    # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
