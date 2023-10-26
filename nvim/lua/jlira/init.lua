@@ -9,10 +9,9 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+		dotfiles = true,
   },
 })
-
+require("jlira.packer")
 require("jlira.remap")
 require("jlira.set")
-

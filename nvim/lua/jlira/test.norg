@@ -1,0 +1,46 @@
+* LIBFT Project
+** HEADER
+   {**** ATOI}
+   {**** MEMSET}
+   {**** BZERO}
+*** Functions
+**** ATOI
+	 @code c
+  int	ft_atoi(const char *nptr);
+	 @end
+***** O que faz:
+	  *A função &atoi& converte uma string*de caracteres representando um número inteiro _em uma forma numérica_ inteira correspondente.
+
+***** Como funciona:
+	  Ao receber um &ponteiro& para uma &string& de caracteres &(nptr)&, a função atoi percorre a string até encontrar o primeiro &caractere& não numérico ou espaço em branco. Durante essa iteração, ela acumula os dígitos válidos, considerando _sinais de positivo ou negativo_ e desconsiderando espaços iniciais. A conversão continua até que um caractere não numérico seja encontrado ou até que o final da string seja alcançado.
+
+	  A função interpreta a string conforme a representação de um número inteiro, considerando também possíveis sinais de positivo ou negativo. Se a string não contiver dígitos válidos ou se o valor resultante ultrapassar os limites do tipo int, o comportamento é indefinido.
+
+***** Retorno:
+	  A função atoi *retorna o valor inteiro resultante da conversão da string.* Esse valor pode ser utilizado em operações matemáticas ou atribuído a variáveis do tipo int. Caso a string de entrada não represente um número válido, o retorno é zero. A função não fornece meios de distinguir entre uma string que representa zero e uma string inválida. Portanto, para validar a conversão, é recomendável verificar se a string é não vazia antes de chamar atoi.
+
+**** MEMSET
+	 @code c
+  void	*ft_memset(void *b, int c, size_t len);
+	 @end
+***** O que faz:
+	  A função *&memset& preenche uma área de memória com um valor de byte especificado*, permitindo a inicialização rápida e eficiente de blocos de memória.
+
+***** Como funciona:
+	  Ao receber um ponteiro para a área de memória (b), um valor de byte (c), e um número de bytes a serem preenchidos (len), a função memset copia o valor de byte especificado para cada byte na área de memória, repetindo o processo por len vezes.
+
+	  Essa função é frequentemente utilizada para inicializar arrays, structs ou outras estruturas de dados em C. O valor de byte fornecido (c) é replicado em cada posição de memória dentro do bloco especificado, efetivamente configurando todos os bytes para o mesmo valor.
+
+***** Retorno:
+	  A função memset retorna um ponteiro para a área de memória modificada (b). O retorno é útil principalmente para chamadas encadeadas ou para verificar se a operação foi bem-sucedida. A área de memória modificada pode ser utilizada em operações subsequentes no programa. Vale ressaltar que memset não realiza verificações de limites; portanto, é responsabilidade do programador garantir que a quantidade de bytes especificada (len) não ultrapasse os limites da área de memória apontada por b.
+
+**** BZERO
+@code c
+void bzero(void *s, size_t n);
+@end
+***** O que faz:
+A função &bzero& preenche os primeiros n bytes de uma área de memória com zeros, proporcionando uma maneira eficiente de limpar rapidamente uma região de dados na memória.
+***** Como funciona:
+Ao receber um ponteiro para a área de memória (s) e um número de bytes a serem zerados (n), a função bzero realiza a operação de forma eficiente, configurando todos os bytes nos primeiros n bytes da área de memória apontada por s para zero. Isso é feito sem a necessidade de percorrer individualmente cada byte, tornando a operação rápida e eficiente.  A função bzero é comumente usada para limpar buffers ou áreas de memória que precisam ser reinicializadas para valores padrão, como antes de armazenar novos dados.
+***** Retorno:
+A função bzero não possui um valor de retorno significativo, uma vez que sua principal ação é realizar a operação de preenchimento com zeros na área de memória fornecida. O usuário deve considerar que a modificação ocorre diretamente na área de memória apontada por s. Portanto, não há necessidade de verificar um valor de retorno específico após a chamada a bzero.

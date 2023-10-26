@@ -1,8 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
 
+vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -11,18 +10,25 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
+	--  theme --
+	-- use({ 'rose-pine/neovim',as = 'rose-pine'})
+	use { "catppuccin/nvim", as = "catppuccin" }
+	--  sandwich
+	use('tpope/vim-surround', {run = 'TSUpdate'})
+	-- transparent bg 
+	use('xiyaowong/transparent.nvim', {run = 'TSUpdate'})
+
     -- indent blankline --
     use( 'lukas-reineke/indent-blankline.nvim', {run = ':TSUpdate'})
     require("indent_blankline").setup {
     }
-    -- BARCECUE
+	-- FIREVIM BROWSER  EXTENSION
+	use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end}
+
+
+	-- BARCECUE
     use({
         "utilyre/barbecue.nvim",
         tag = "*",
@@ -54,6 +60,8 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     --42 HEADER--
     use('42Paris/42header', {run = 'TSUpdate'})
+	-- tmuux navigator
+	use('christoomey/vim-tmux-navigator')
     -- vim be good --
     use('ThePrimeagen/vim-be-good', {run = 'TSUpdate'})
     -- LSP --
@@ -72,4 +80,24 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},     -- Required
         }
     }
+	use {
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+            },
+        }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+}
   end)

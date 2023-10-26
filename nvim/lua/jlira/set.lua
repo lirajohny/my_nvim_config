@@ -3,7 +3,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 vim.opt.guicursor = ""
 vim.opt.nu = true
@@ -33,4 +33,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.wrap = true
+vim.opt.textwidth = 120
+vim.opt.formatoptions = { "j" }
 
+vim.g.user42 = 'jlira'
+vim.g.mail42 = 'jlira@student.42.rj'
